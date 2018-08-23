@@ -19,6 +19,7 @@ func main() {
 
 	// print current file contents
 	fmt.Print(string(dat))
+	fmt.Println("")
 
 	// set dictionary aka the reverse of the english alphabet
 	dictionary := []string{"Z", "Y", "X", "W", "V", "U", "T", "S", "R", "Q", "P", "O", "N", "M", "L", "K", "J", "I", "H", "G", "F", "E", "D", "C", "B", "A"}
