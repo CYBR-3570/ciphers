@@ -8,7 +8,7 @@ import (
 
 func main() {
 	// read in runtime flags
-	filePtr := flag.String("file", "text", "relative path to text file")
+	filePtr := flag.String("file", "text1", "relative path to text file")
 	flag.Parse()
 
 	// read in text file
