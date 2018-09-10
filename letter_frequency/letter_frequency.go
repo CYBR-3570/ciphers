@@ -1,20 +1,14 @@
 package main
 
 import (
-	//"flag"
 	"fmt"
 	"os"
 	"strings"
 )
 
 func main() {
-	// read in flags
-	//shiftPtr := flag.Int("shift", 0, "amount to shift")
-	//flag.Parse()
-	//shift := *shiftPtr
-
 	// read in runtime args
-	upperArgs := strings.ToUpper(os.Args[1])
+	upperArgs := strings.ToUpper(strings.Join(os.Args[1:], ""))
 	byteArgs := []byte(upperArgs)
 
 	// print unshifted data
@@ -24,7 +18,6 @@ func main() {
 
 	// set dictionary aka the reverse of the english alphabet
 	dictionary := []string{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}
-	//freq := []int{}
 	var freq [26]int
 
 	// loop through text string
