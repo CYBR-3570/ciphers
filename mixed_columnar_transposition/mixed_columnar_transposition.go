@@ -46,7 +46,7 @@ func main() {
 
 	// create 2d array to hold alphabet
 	row := len(keyword)
-	col := ((row + 26) % row) + 2
+	col := ((len(dat) + 26) / row)
 	maxArr := make([][]string, row)
 	for i := range maxArr {
 		maxArr[i] = make([]string, col)
