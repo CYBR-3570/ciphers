@@ -11,6 +11,8 @@ func main() {
 	// read in runtime flags
 	filePtr := flag.String("file", "text2", "relative path to text file")
 	keywordPtr := flag.String("keyword", "PRIME MINISTER", "keyword to use")
+	encipherPtr := flag.Bool("encipher", false, "run in encipher mode")
+	decipherPtr := flag.Bool("decipher", false, "run in decipher mode")
 	flag.Parse()
 
 	// read in text file
@@ -82,19 +84,33 @@ func main() {
 	// print current file contents
 	fmt.Println("")
 	fmt.Printf("original message:  %s\n", string(dat))
-	fmt.Printf("new message:       ")
 
-	// run substitution
-	for i := range dat {
-		// search for character in newAlph
-		for j := range newAlpha {
-			if newAlpha[j] == string(dat[i]) {
-				// print translated letter
-				fmt.Printf("%s", actualAlpha[j])
+	if *encipherPtr {
+		fmt.Printf("enciphered: ")
+		// run substitution (new -> old)
+		for i := range dat {
+			// convert ascii to 0-26 aka alphabet
+			a := dat[i] - 65
+
+			fmt.Printf("%s", newAlpha[a])
+		}
+		fmt.Printf("\n")
+	}
+
+	if *decipherPtr {
+		fmt.Printf("deciphered: ")
+		// run substitution (old -> new)
+		for i := range dat {
+			// search for character in newAlph
+			for j := range newAlpha {
+				if newAlpha[j] == string(dat[i]) {
+					// print translated letter
+					fmt.Printf("%s", actualAlpha[j])
+				}
 			}
 		}
+		fmt.Printf("\n")
 	}
-	fmt.Printf("\n")
 }
 
 func removeDuplicates(l string) string {
