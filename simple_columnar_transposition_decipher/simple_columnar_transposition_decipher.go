@@ -79,9 +79,12 @@ func main() {
 		}
 	}
 
+	for i := 0; i < row; i++ {
+		fmt.Printf("final: %s\n", maxArr[i])
+	}
+
 	// print out final array
 	for i := 0; i < row; i++ {
-		//fmt.Printf("final: %s\n", maxArr[i])
 		for y := 0; y < col; y++ {
 			fmt.Printf("%s", maxArr[i][y])
 		}
