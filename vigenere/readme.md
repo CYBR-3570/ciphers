@@ -22,3 +22,5 @@ ONE FATHER IS MORE THAN A HUNDRED SCHOOLMASTERS
 enciphered message:
 DEYIEGATICVQBKTKBDRNAJEXUIQLRYIRPZTHKYUW
 ```
+### code
+used some of odysseus/vigenere's functions
